@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="retro">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shopping with JS</title>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.3/dist/full.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <header>
+    <div class="navbar bg-base-100 shadow-2xl lg:px-12">
+      <div class="flex-1">
+        <a class="btn btn-ghost normal-case text-xl">daisyUI</a>
+      </div>
+      <div class="flex-none gap-2">
+        <div class="form-control">
+          <input type="text" placeholder="Search" class="input input-bordered" />
+        </div>
+        <div class="dropdown dropdown-end">
+          <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+            <div class="w-10 rounded-full">
+              <img src="https://picsum.photos/500/300?random=1" />
+            </div>
+          </label>
+          <ul tabindex="0" class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
+            <li>
+              <a class="justify-between">
+                Profile
+                <span class="badge">New</span>
+              </a>
+            </li>
+            <li><a>Settings</a></li>
+            <li><a>Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="lg:px-12 md:flex">
+      <div class="products-details mt-5 w-[70%] grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="card card-compact w-full bg-base-100 shadow-xl">
+          <figure>
+            <img class="w-full h-40" src="images/coffee.jpg" alt="Shoes" />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title" id="first-name">Coffee JS</h2>
+            <p>i love coffee, coffee is my wifu thukku i mean love</p>
+            <p>Price: $<span id="first-price">110</span></p>
+            <p>Quantity: <span id="first-quantity">5</span></p>
+            <div class="card-actions justify-end">
+              <button class="btn btn-primary" id="first-card">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="card card-compact w-full bg-base-100 shadow-xl">
+          <figure>
+            <img class="w-full h-40" src="images/heart_js.jpg" alt="Shoes" />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title" id="second-name">Heart JS</h2>
+            <p>i love coffee, coffee is my wifu thukku i mean love</p>
+            <p>Price: $<span id="second-price">200</span></p>
+            <p>Quantity: <span id="second-quantity">10</span></p>
+            <div class="card-actions justify-end">
+              <button class="btn btn-primary" id="second-card">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="card card-compact w-full bg-base-100 shadow-xl">
+          <figure>
+            <img class="w-full h-40" src="images/panda.png" alt="Shoes" />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title" id="third-name">Panda JS</h2>
+            <p>i love coffee, coffee is my wifu thukku i mean love</p>
+            <p>Price: $<span id="third-price">250</span></p>
+            <p>Quantity: <span id="third-quantity">5</span></p>
+            <div class="card-actions justify-end">
+              <button class="btn btn-primary" id="third-card">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="card card-compact w-full bg-base-100 shadow-xl">
+          <figure>
+            <img class="w-full h-40" src="images/umbrella.png" alt="Shoes" />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title" id="fourth-name">Umbrella JS</h2>
+            <p>i love coffee, coffee is my wifu thukku i mean love</p>
+            <p>Price: $<span id="fourth-price">110</span></p>
+            <p>Quantity: <span id="fourth-quantity">5</span></p>
+            <div class="card-actions justify-end">
+              <button class="btn btn-primary" id="fourth-card">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="card card-compact w-full bg-base-100 shadow-xl">
+          <figure>
+            <img class="w-full h-40" src="images/vue-js.jpg" alt="Shoes" />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title" id="fivth-name">vue JS</h2>
+            <p>i love coffee, coffee is my wifu thukku i mean love</p>
+            <input id="fivth-price" type="text" placeholder="Price"
+              class="input input-bordered input-sm w-full max-w-xs" />
+            <input id="fivth-quantity" type="text" placeholder="Quantity"
+              class="input input-bordered input-sm w-full max-w-xs" />
+            <div class="card-actions justify-end">
+              <button class="btn btn-primary" id="fivth-card">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cart-details w-full md:w-[30%] mx-auto">
+        <h1 class="text-3xl text-center font-bold underline mt-5">
+          Total Products: <span>0</span>
+        </h1>
+        <div class="overflow-x-auto">
+          <table class="table w-full">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody id="table-container"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="index.js"></script>
+</body>
+
+</html>
